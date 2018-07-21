@@ -40,10 +40,11 @@ def main():
 
     # test __eq__ and __hash__ with dict() ?
     s6 = student("Mike", 3.6, 21)
-    student_dict = {s6:1}
+    student_dict = {}
+    student_dict[s6] = 1
     for s in students:
-        student_dict[s]=1
-    print(len(student_dict))
+        student_dict[s] = 1
+    print("items in the dictionary = {}".format(len(student_dict)))
 
 
 if __name__ == "__main__":
