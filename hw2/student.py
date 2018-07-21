@@ -41,7 +41,6 @@ def main():
     # test using dict()
     # https://docs.python.org/2/library/stdtypes.html?highlight=__dict__#object.__dict__
     print(dict(s1.__dict__))
-    print(dict(student.__dict__))
 
 
 if __name__ == "__main__":
