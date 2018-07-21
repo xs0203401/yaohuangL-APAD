@@ -17,7 +17,7 @@ class student:
                 return self.age < self.age
 
     def __eq__(self, other):
-        return self.gpa == other.gpa
+        return self.gpa == other.gpa and self.name == other.name and self.age == other.age
 
     def __hash__(self):
         # Reference: https://stackoverflow.com/questions/4005318/how-to-implement-a-good-hash-function-in-python
@@ -33,14 +33,17 @@ def main():
 
     students = [s1, s2, s3, s4, s5]
 
-    # sorted()
+    # test with sorted()
     students_sorted = sorted(students, key=lambda x: x.gpa)
     for s in students_sorted:
         print(s)
 
-    # test using dict()
-    # https://docs.python.org/2/library/stdtypes.html?highlight=__dict__#object.__dict__
-    print(dict(s1.__dict__))
+    # test __eq__ and __hash__ with dict() ?
+    s6 = student("Mike", 3.6, 21)
+    student_dict = {s6:1}
+    for s in students:
+        student_dict[s]=1
+    print(len(student_dict))
 
 
 if __name__ == "__main__":
