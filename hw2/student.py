@@ -33,7 +33,8 @@ def main():
 
     students = [s1, s2, s3, s4, s5]
 
-    # test with sorted()
+    # test with sorted() (using Lambda)
+    # https://stackoverflow.com/questions/3766633/how-to-sort-with-lambda-in-python
     students_sorted = sorted(students, key=lambda x: x.gpa)
     for s in students_sorted:
         print(s)
