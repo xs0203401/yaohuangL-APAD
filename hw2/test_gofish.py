@@ -13,4 +13,5 @@ if __name__ == "__main__":
     print(deck)
     hand = {}
     name = "Henry"
-    gofish.drawCard(name, deck, hand)
+    for _ in range(len(deck)):
+        gofish.drawCard(name, deck, hand)
