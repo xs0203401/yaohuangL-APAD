@@ -39,6 +39,7 @@ def main():
         print(s)
 
     # test __eq__ and __hash__ with dict() ?
+    # another student object with existing parameters
     s6 = student("Mike", 3.6, 21)
     student_dict = {}
     student_dict[s6] = 1
