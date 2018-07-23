@@ -29,18 +29,28 @@ def main():
     s2 = student("James", 3.7, 20)
     s3 = student("Mike", 3.6, 21)
     s4 = student("Jason", 3.5, 20)
-    s5 = student("May", 3.5, 21)
+    s5 = student("May", 3.5, 19)
 
     students = [s1, s2, s3, s4, s5]
 
     # test with sorted() (using Lambda)
     # https://stackoverflow.com/questions/3766633/how-to-sort-with-lambda-in-python
-    students_sorted = sorted(students, key=lambda x: x.gpa)
+
+    #sort with age:
+    print("Sort with age:")
+    students_sorted_age = sorted(students, key=lambda x: x.age)
+    for s in students_sorted_age:
+        print(s)
+
+    #sort by itself:
+    print("Sort by itself:")
+    students_sorted = sorted(students)
     for s in students_sorted:
         print(s)
 
     # test __eq__ and __hash__ with dict() ?
     # another student object with existing parameters
+    print("Check dict() with existing equal student:")
     s6 = student("Mike", 3.6, 21)
     student_dict = {}
     student_dict[s6] = 1
