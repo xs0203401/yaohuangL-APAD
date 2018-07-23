@@ -26,9 +26,9 @@ def highest_affinity(site_list, user_list, time_list):
     max_affinity_pair = ['a','b']
     for i in range(len(sites)):
         for j in range(i+1, len(sites)):
-            # affinity_num = len(set(sites_items[i][1]) & set(sites_items[j][1]))
-            # try to avoid using "set()" operation
-            affinity_num = sum([1 for x in sites_items[j][1] if x in sites_items[i][1]])
+            affinity_num = len(set(sites_items[i][1]) & set(sites_items[j][1]))
+            # try to avoid using "intersection" operation:
+            # affinity_num = sum([1 for x in set(sites_items[j][1]) if x in sites_items[i][1]])
             if (max_affinity_num < affinity_num):
                 max_affinity_num = affinity_num
                 max_affinity_pair = sorted([sites_items[i][0], sites_items[j][0]])
