@@ -36,9 +36,9 @@ def main():
     # test with sorted() (using Lambda)
     # https://stackoverflow.com/questions/3766633/how-to-sort-with-lambda-in-python
 
-    #sort with age:
+    #sort - breaking age with lambda function:
     print("Sort with age:")
-    students_sorted_age = sorted(students, key=lambda x: x.age)
+    students_sorted_age = sorted(students, key=lambda x: (x.age, x.gpa, x.name))
     for s in students_sorted_age:
         print(s)
 
