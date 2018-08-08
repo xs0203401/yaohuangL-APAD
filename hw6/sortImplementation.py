@@ -11,6 +11,8 @@ class QSTemplate:
     def sort_fun(self, l):
         if len(l) <= 1:
             return l
+
+        # pick the pivot index p and swap the pivot num to the [0]
         p = self.__pivot__(l)
         l[p], l[0] = l[0], l[p]
 
