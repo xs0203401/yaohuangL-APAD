@@ -22,6 +22,16 @@ class UrgentDecorator(val report: Report): ReportDecorator(report) {
     }
 }
 
+class FavDecorator(val report: Report, val faved: Boolean): ReportDecorator(report) {
+    override fun getReportDetails(): String {
+        if (this.faved) {
+            return report.getReportDetails() + " *Fav* "
+        } else {
+            return report.getReportDetails() + " *Not-Fav* "
+        }
+    }
+}
+
 fun main(args: Array<String>) {
 	val report = Report("test-report-1_title","test-report-1_image", "test-report-1_description")
     println(report.getReportDetails())
@@ -32,6 +42,12 @@ fun main(args: Array<String>) {
     val report_UR = UrgentDecorator(report)
     println(report_UR.getReportDetails())
     
-    val report_UR_loc = UrgentDecorator(report_loc)
-    println(report_UR_loc.getReportDetails())
+    val report_Fav = FavDecorator(report, false)
+    println(report_Fav.getReportDetails())
+    
+    val report_Fav_No = FavDecorator(report, true)
+    println(report_Fav_No.getReportDetails())
+    
+    val report_UR_loc_Fav = FavDecorator(UrgentDecorator(LocationDecorator(report,10,20)),true)
+    println(report_UR_loc_Fav.getReportDetails())
 }
