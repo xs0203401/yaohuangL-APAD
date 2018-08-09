@@ -25,6 +25,13 @@ class UrgentDecorator(val report: Report): ReportDecorator(report) {
 fun main(args: Array<String>) {
 	val report = Report("test-report-1_title","test-report-1_image", "test-report-1_description")
     println(report.getReportDetails())
+    
     val report_loc = LocationDecorator(report,10,20)
     println(report_loc.getReportDetails())
+    
+    val report_UR = UrgentDecorator(report)
+    println(report_UR.getReportDetails())
+    
+    val report_UR_loc = UrgentDecorator(report_loc)
+    println(report_UR_loc.getReportDetails())
 }
