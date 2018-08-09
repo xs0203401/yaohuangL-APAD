@@ -80,39 +80,41 @@ class QSPivotMid(QSTemplate):
 
 def main():
     print("test input list")
-    test_list = [1, 3, 5, 2, 2, 4, 7, 8, 9, 6]
-    print(test_list)
+    test_list_2 = []
+    test_list_1 = [1, 3, 5, 2, 2, 4, 7, 8, 9, 6]
+    test_list_3 = [1, 1, 3, 3, 5]
+    print(test_list_3)
 
     # ASC=non-decreasing DESC=non-increasing
     # Pivot First:
     dr = "ASC"
     print("direction: " + dr)
     qs1 = QSPivotFirst(dr)
-    print(qs1.sort_fun(test_list))
+    print(qs1.sort_fun(test_list_3))
     dr = "DESC"
     print("direction: " + dr)
     qs2 = QSPivotFirst(dr)
-    print(qs2.sort_fun(test_list))
+    print(qs2.sort_fun(test_list_3))
 
     # Pivot Last
     dr = "ASC"
     print("direction: " + dr)
     qs3 = QSPivotLast(dr)
-    print(qs3.sort_fun(test_list))
+    print(qs3.sort_fun(test_list_3))
     dr = "DESC"
     print("direction: " + dr)
     qs4 = QSPivotLast(dr)
-    print(qs4.sort_fun(test_list))
+    print(qs4.sort_fun(test_list_3))
 
     # Pivot Mid
     dr = "ASC"
     print("direction: " + dr)
     qs5 = QSPivotMid(dr)
-    print(qs5.sort_fun(test_list))
+    print(qs5.sort_fun(test_list_3))
     dr = "DESC"
     print("direction: " + dr)
     qs6 = QSPivotMid(dr)
-    print(qs6.sort_fun(test_list))
+    print(qs6.sort_fun(test_list_3))
 
 
 if __name__ == "__main__":
